@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "strict": true,
+        "rootDir": "./src",
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "lib": ["esnext", "dom"],
+        "types": ["node"],
+        "typeRoots": ["./node_modules/@types", "./src/types"],
+        "resolveJsonModule": true
+    },
+    "include": ["src/**/*.ts", "seeders", "migrations"]
+}

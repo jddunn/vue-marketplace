@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: market
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/linkby
+      - JWT_SECRET=JWT_SECRET_KEY
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    # command: sh -c "npm run seed && npm run dev"
+    # entrypoint: ["/app/entrypoint.sh"]
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    # command: npm run dev
+
+volumes:
+  pgdata:

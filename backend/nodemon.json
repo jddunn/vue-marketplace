@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "config", "routes", "controllers", "models", "seeders"],
+    "ext": "ts,js,json",
+    "ignore": ["node_modules"],
+    "exec": "ts-node src/server.ts"
+}

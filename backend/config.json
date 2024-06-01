@@ -1,0 +1,20 @@
+{
+    "development": {
+        "url": "postgres://user:password@db:5432/linkby",
+        "dialect": "postgres",
+        "username": "user",
+        "password": "password"
+    },
+    "test": {
+        "url": "postgres://user:password@db:5432/linkby",
+        "dialect": "postgres",
+        "username": "user",
+        "password": "password"
+    },
+    "production": {
+        "url": "postgres://user:password@db:5432/linkby",
+        "dialect": "postgres",
+        "username": "user",
+        "password": "password"
+    }
+}

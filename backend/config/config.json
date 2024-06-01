@@ -1,0 +1,26 @@
+{
+    "development": {
+        "username": "user",
+        "password": "password",
+        "database": "market",
+        "host": "db",
+        "dialect": "postgres",
+        "url": "postgres://user:password@db:5432/market"
+    },
+    "test": {
+        "username": "user",
+        "password": "password",
+        "database": "market",
+        "host": "db",
+        "dialect": "postgres",
+        "url": "postgres://user:password@db:5432/market"
+    },
+    "production": {
+        "username": "user",
+        "password": "password",
+        "database": "market",
+        "host": "db",
+        "dialect": "postgres",
+        "url": "postgres://user:password@db:5432/market"
+    }
+}
