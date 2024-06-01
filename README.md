@@ -12,6 +12,12 @@ This project is a small web application that allows users to buy and sell their 
 - Delete listings if you are the owner of one
 - Make bids / purchases of listings from other users
 
+### To-do
+
+- Make record of inventory and track who owns what in the database
+- Make list of offers viewable
+- Allow for counter-offers and acceptance of offers
+
 ### Tech Stack
 
 - Frontend: Vue.js, Vuetify, Vite
@@ -30,7 +36,7 @@ This project is a small web application that allows users to buy and sell their 
 
 **User** - id (Integer, Primary Key, Auto Increment) - email (String, Unique, Not Null) - password (String, Not Null)
 
-**Product** - id (Integer, Primary Key, Auto Increment) - name (String, Not Null) - price (Float, Not Null) - description (String, Not Null) - images (Array of Strings) - status (Enum: 'Available', 'Reserved', 'Sold', Default: 'Available') - userId (Foreign Key to User, Not Null)
+**Product** - id (Integer, Primary Key, Auto Increment) - name (String, Not Null) - price (Float, Not Null) - description (String, Not Null) - images (Array of Strings) - status (Enum: 'Available', 'Reserved', 'Sold', Default: 'Available') - userId (Foreign Key to User, Not Null) (NOTE: A "owner" of a product hasn't been implemented but will be necessary)
 
 **Offer** - id (Integer, Primary Key, Auto Increment) - price (Float, Not Null) - type (Enum: 'BuyerOffer', 'SellerCounterOffer', Not Null) - status (Enum: 'Pending', 'Accepted', 'Rejected', Default: 'Pending') - productId (Foreign Key to Product, Not Null) - userId (Foreign Key to User, Not Null)
 
