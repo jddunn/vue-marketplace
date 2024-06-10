@@ -17,15 +17,10 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
-    environment:
-      - DATABASE_URL=postgres://user:password@db:5432/linkby
-      - JWT_SECRET=JWT_SECRET_KEY
     ports:
       - "5000:5000"
     depends_on:
       - db
-    # command: sh -c "npm run seed && npm run dev"
-    # entrypoint: ["/app/entrypoint.sh"]
   frontend:
     build:
       context: ./frontend
@@ -35,7 +30,6 @@ services:
     volumes:
       - ./frontend:/app
       - /app/node_modules
-    # command: npm run dev
 
 volumes:
   pgdata:
